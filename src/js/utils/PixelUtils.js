@@ -77,7 +77,9 @@
 
       for (var j = 0; j < size; j++) {
         for (var i = 0; i < size; i++) {
-          pixels.push([col - Math.floor(size / 2) + i, row - Math.floor(size / 2) + j]);
+          if (size < 3 || !((j == 0 && i == 0) || (j == 0 && i == size - 1) || (j == size - 1 && i == 0) || (j == size - 1 && i == size - 1))) {
+            pixels.push([col - Math.floor(size / 2) + i, row - Math.floor(size / 2) + j]);
+          }
         }
       }
 
